@@ -12,4 +12,10 @@ public class WelcomeController {
         model.put("message", "My Super Cool Rent App");
         return "welcome";
     }
+
+    @GetMapping("thyme")
+    public String thyme(Map<String, Object> model){
+        model.put("message", "My Super thyme Leaf Rent App");
+        return "thyme";
+    }
 }
