@@ -26,6 +26,8 @@ public class RentConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry){
         registry.addResourceHandler("/img/**")
                 .addResourceLocations("/WEB-INF/img/");
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("/WEB-INF/css/");
     }
     @Override
     public void addInterceptors(InterceptorRegistry interceptorRegistry){
@@ -73,7 +75,7 @@ public class RentConfig implements WebMvcConfigurer {
     public ViewResolver thymeleafResolver(){
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(templateEngine());
-        thymeleafViewResolver.setOrder(0);
+        thymeleafViewResolver.setOrder(10);
         return thymeleafViewResolver;
     }
 }

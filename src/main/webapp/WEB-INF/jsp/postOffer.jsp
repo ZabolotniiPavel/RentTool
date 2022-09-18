@@ -2,6 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
  <html lang="en">
+ <link href="/css/style.css" rel="stylesheet" type="text/css">
  <head>
      <meta charset="UTF-8">
      <title>Post offer Page</title>
@@ -11,6 +12,7 @@
      <a href="http://localhost:8080/postOffer?lang=ro">Romana</a>
      <a href="http://localhost:8080/postOffer?lang=ru">Русский</a>
      <form:form modelAttribute="offer">
+        <form:errors path="*" cssClass="errorblock" element="div"/>
         <table>
             <tr>
                 <td>

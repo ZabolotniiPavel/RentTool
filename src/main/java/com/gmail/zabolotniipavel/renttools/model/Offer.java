@@ -1,6 +1,10 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Offer {
+    @NotEmpty
+    private String name;
     public String getName() {
         return name;
     }
@@ -9,5 +13,4 @@ public class Offer {
         this.name = name;
     }
 
-    private String name;
 }
