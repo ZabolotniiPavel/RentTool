@@ -17,6 +17,6 @@ public class PostOfferController {
     @PostMapping("postOffer")
     public String addOffer(@ModelAttribute ("offer") Offer offer){
         System.out.println("Added offer" + offer.getName());
-        return "postOffer";
+        return "redirect:postOffer";
     }
 }
