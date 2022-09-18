@@ -15,4 +15,10 @@ public class UserController {
         user.setMobileNumber(mobile);
         return user;
     }
+
+    @PostMapping("/user")
+    public User getPoarUser(@Valid User user){
+        System.out.println(user.getUserName());
+        return user;
+    }
 }
