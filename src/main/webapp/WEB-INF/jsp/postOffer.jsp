@@ -8,6 +8,8 @@
  </head>
  <body>
      <h1>Post offer</h1>
+     <a href="http://localhost:8080/postOffer?lang=ro">Romana</a>
+     <a href="http://localhost:8080/postOffer?lang=ru">Русский</a>
      <form:form modelAttribute="offer">
         <table>
             <tr>
@@ -19,8 +21,8 @@
                 </td>
             </tr>
             <tr>
-                <td colspat="2">
-                   <input type="submit" value="Add Offer">
+                <td colspan="2">
+                   <input type="submit" value='<spring:message code="publish"/>'>
                 </td>
             </tr>
         </table>
