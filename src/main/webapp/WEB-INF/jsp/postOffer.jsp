@@ -19,10 +19,21 @@
                     <spring:message code="name"/>
                 </td>
                 <td>
-                    <form:input path="name" />
+                    <form:input path="title" />
                 </td>
                 <td>
-                    <form:errors path="name" cssClass="error"/>
+                    <form:errors path="title" cssClass="error"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <spring:message code="description"/>
+                </td>
+                <td>
+                    <form:textarea  path="description" />
+                </td>
+                <td>
+                    <form:errors path="description" cssClass="error"/>
                 </td>
             </tr>
             <tr>
