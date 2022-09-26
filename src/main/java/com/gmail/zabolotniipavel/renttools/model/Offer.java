@@ -3,14 +3,26 @@ package com.gmail.zabolotniipavel.renttools.model;
 import javax.validation.constraints.NotEmpty;
 
 public class Offer {
+    private Long Id;
     @NotEmpty
-    private String name;
-    public String getName() {
-        return name;
+    private String title;
+
+
+
+    @NotEmpty
+    private String description;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getDescription() {
+        return description;
     }
 
 }

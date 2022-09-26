@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.Map;
 
 @Controller
 public class PostOfferController {
@@ -22,7 +21,7 @@ public class PostOfferController {
             System.out.println("There were errors in  offer" + result.getAllErrors());
             return "postOffer";
         }
-        System.out.println("Added offer" + offer.getName());
+        System.out.println("Added offer" + offer.getTitle() + " " + offer.getDescription());
         return "redirect:postOffer";
     }
 }
