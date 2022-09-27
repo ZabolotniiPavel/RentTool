@@ -2,7 +2,7 @@ package com.gmail.zabolotniipavel.renttools.model;
 
 import javax.validation.constraints.NotEmpty;
 
-public class Offer {
+public class Post {
     private Long Id;
     @NotEmpty
     private String title;

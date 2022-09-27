@@ -9,7 +9,7 @@ public class User {
     @NotEmpty
     private String mobileNumber;
 
-    private List<Offer> userPosts;
+    private List<Post> userPosts;
 
     public String getUserName() {
         return userName;
@@ -26,11 +26,11 @@ public class User {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
-    public List<Offer> getUserPosts() {
+    public List<Post> getUserPosts() {
         return userPosts;
     }
 
-    public void setUserPosts(List<Offer> userPosts) {
+    public void setUserPosts(List<Post> userPosts) {
         this.userPosts = userPosts;
     }
 
