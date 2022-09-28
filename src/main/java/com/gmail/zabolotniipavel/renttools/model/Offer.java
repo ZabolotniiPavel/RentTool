@@ -1,7 +1,8 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-
+@Table
 public class Offer {
     private Long Id;
     @NotEmpty
