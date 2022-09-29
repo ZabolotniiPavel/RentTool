@@ -2,19 +2,15 @@ package com.gmail.zabolotniipavel.renttools.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Offer {
-
+public class Post {
     @javax.persistence.Id
     @GeneratedValue
     private Long Id;
     @NotEmpty
     private String title;
-
-
 
     @NotEmpty
     private String description;

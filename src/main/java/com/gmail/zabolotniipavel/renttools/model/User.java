@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 
 @Entity
 public class User {
@@ -17,6 +16,7 @@ public class User {
     private String mobileNumber;
 
     //private List<Offer> userPosts;
+
 
     public String getUserName() {
         return userName;
@@ -33,12 +33,13 @@ public class User {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
-    /*public List<Offer> getUserPosts() {
+
+    /*
+    public List<Post> getUserPosts() {
         return userPosts;
     }
-
-    public void setUserPosts(List<Offer> userPosts) {
+    public void setUserPosts(List<Post> userPosts) {
         this.userPosts = userPosts;
     }
-*/
+    */
 }
