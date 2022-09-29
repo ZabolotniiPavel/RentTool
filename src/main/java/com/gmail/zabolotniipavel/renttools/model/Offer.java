@@ -1,9 +1,15 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
-import javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
-@Table
+
+@Entity
 public class Offer {
+
+    @javax.persistence.Id
+    @GeneratedValue
     private Long Id;
     @NotEmpty
     private String title;
@@ -24,6 +30,13 @@ public class Offer {
 
     public String getDescription() {
         return description;
+    }
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
 }
