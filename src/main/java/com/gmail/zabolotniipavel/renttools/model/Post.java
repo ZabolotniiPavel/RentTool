@@ -1,13 +1,16 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
 public class Post {
+    @javax.persistence.Id
+    @GeneratedValue
     private Long Id;
     @NotEmpty
     private String title;
-
-
 
     @NotEmpty
     private String description;
@@ -23,6 +26,13 @@ public class Post {
 
     public String getDescription() {
         return description;
+    }
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
 }
