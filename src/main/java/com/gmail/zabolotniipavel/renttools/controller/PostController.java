@@ -1,6 +1,8 @@
 package com.gmail.zabolotniipavel.renttools.controller;
 
 import com.gmail.zabolotniipavel.renttools.model.Post;
+import com.gmail.zabolotniipavel.renttools.service.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ import javax.validation.Valid;
 
 @Controller
 public class PostController {
+    @Autowired
+    private PostService postService;
     @GetMapping("postOffer")
     public String getPostOffer(@ModelAttribute ("offer") Post post){
         return "postOffer";
@@ -22,6 +26,7 @@ public class PostController {
             return "postOffer";
         }
         System.out.println("Added offer" + post.getTitle() + " " + post.getDescription());
+        postService.save(post);
         return "redirect:postOffer";
     }
 }
