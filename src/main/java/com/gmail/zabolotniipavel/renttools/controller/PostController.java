@@ -8,8 +8,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class PostController {
@@ -28,5 +30,9 @@ public class PostController {
         System.out.println("Added offer" + post.getTitle() + " " + post.getDescription());
         postService.save(post);
         return "redirect:postOffer";
+    }
+    @GetMapping("posts")
+    public @ResponseBody List<Post>  getPosts() {
+        return postService.findAll();
     }
 }
