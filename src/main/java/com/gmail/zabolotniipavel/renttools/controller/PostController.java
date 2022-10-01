@@ -29,7 +29,7 @@ public class PostController {
         }
         System.out.println("Added offer" + post.getTitle() + " " + post.getDescription());
         postService.save(post);
-        return "redirect:postOffer";
+        return "redirect:posts";
     }
     @GetMapping("posts")
     public @ResponseBody List<Post>  getPosts() {

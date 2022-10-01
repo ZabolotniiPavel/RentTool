@@ -1,12 +1,13 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Post {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue
     private Long Id;
     @NotEmpty
