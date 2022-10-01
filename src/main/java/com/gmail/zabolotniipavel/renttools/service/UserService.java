@@ -4,4 +4,6 @@ import com.gmail.zabolotniipavel.renttools.model.User;
 
 public interface UserService {
     User save(User user);
+
+    User find(Long id);
 }

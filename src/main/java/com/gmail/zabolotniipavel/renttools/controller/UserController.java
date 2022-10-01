@@ -23,7 +23,6 @@ public class UserController {
 
     @PostMapping("/user")
     public User getPoarUser(@Valid User user){
-        System.out.println(user.getUserName());
         userService.save(user);
         return user;
     }

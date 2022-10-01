@@ -2,6 +2,7 @@ package com.gmail.zabolotniipavel.renttools.controller;
 
 import com.gmail.zabolotniipavel.renttools.model.Post;
 import com.gmail.zabolotniipavel.renttools.service.PostService;
+import com.gmail.zabolotniipavel.renttools.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,8 @@ import java.util.List;
 public class PostController {
     @Autowired
     private PostService postService;
+    @Autowired
+    private UserService userService;
     @GetMapping("postOffer")
     public String getPostOffer(@ModelAttribute ("offer") Post post){
         return "postOffer";
@@ -24,10 +27,9 @@ public class PostController {
     @PostMapping("postOffer")
     public String addOffer(@Valid @ModelAttribute ("offer") Post post, BindingResult result){
         if(result.hasErrors()){
-            System.out.println("There were errors in  offer" + result.getAllErrors());
             return "postOffer";
         }
-        System.out.println("Added offer" + post.getTitle() + " " + post.getDescription());
+        post.setUser(userService.find(2L));
         postService.save(post);
         return "redirect:posts";
     }

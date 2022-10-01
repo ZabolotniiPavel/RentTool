@@ -1,20 +1,22 @@
 package com.gmail.zabolotniipavel.renttools.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Post {
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long postId;
     @NotEmpty
     private String title;
 
     @NotEmpty
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name="userId", nullable=false)
+    private User user;
     public void setTitle(String title) {
         this.title = title;
     }
@@ -28,12 +30,19 @@ public class Post {
     public String getDescription() {
         return description;
     }
-    public Long getId() {
-        return Id;
+    public Long getPostId() {
+        return postId;
     }
 
-    public void setId(Long id) {
-        Id = id;
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
