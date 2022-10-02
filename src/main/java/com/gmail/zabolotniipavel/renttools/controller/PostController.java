@@ -5,6 +5,7 @@ import com.gmail.zabolotniipavel.renttools.service.PostService;
 import com.gmail.zabolotniipavel.renttools.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,11 +22,11 @@ public class PostController {
     @Autowired
     private UserService userService;
     @GetMapping("postOffer")
-    public String getPostOffer(@ModelAttribute ("offer") Post post){
+    public String getPostOffer(@ModelAttribute ("post") Post post){
         return "postOffer";
     }
     @PostMapping("postOffer")
-    public String addOffer(@Valid @ModelAttribute ("offer") Post post, BindingResult result){
+    public String addOffer(@Valid @ModelAttribute ("post") Post post, BindingResult result){
         if(result.hasErrors()){
             return "postOffer";
         }
@@ -34,7 +35,8 @@ public class PostController {
         return "redirect:posts";
     }
     @GetMapping("posts")
-    public @ResponseBody List<Post>  getPosts() {
-        return postService.findAll();
+    public String getPosts(Model model) {
+        model.addAttribute("posts", postService.findAll());
+        return "posts";
     }
 }

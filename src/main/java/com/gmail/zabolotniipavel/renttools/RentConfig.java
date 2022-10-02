@@ -75,7 +75,8 @@ public class RentConfig implements WebMvcConfigurer {
     public ViewResolver thymeleafResolver(){
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(templateEngine());
-        thymeleafViewResolver.setOrder(10);
+        thymeleafViewResolver.setCharacterEncoding("UTF-8");
+        thymeleafViewResolver.setOrder(0);
         return thymeleafViewResolver;
     }
 }
