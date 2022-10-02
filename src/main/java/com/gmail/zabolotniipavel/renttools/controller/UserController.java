@@ -21,8 +21,8 @@ public class UserController {
         return user;
     }
 
-    @PostMapping("/user")
-    public User getPoarUser(@Valid User user){
+    @PostMapping("/register")
+    public User registerUser(@Valid User user){
         userService.save(user);
         return user;
     }

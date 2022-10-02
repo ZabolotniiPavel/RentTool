@@ -7,5 +7,12 @@
 <body>
 <h1>Welcome to rent tool application</h1>
 <p th:text="${message}"></p>
+<a href="http://localhost:8080/postOffer?lang=ro">Romana</a>
+<a href="http://localhost:8080/postOffer?lang=ru">Русский</a>
+
+<a href="http://localhost:8080/login"
+  th:text="#{welcome.login}"/>
+<a href="http://localhost:8080/register"
+   th:text="#{welcome.register}"/>
 </body>
 </html>
