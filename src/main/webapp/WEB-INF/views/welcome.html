@@ -14,9 +14,13 @@
   th:text="#{welcome.login}"/>
 <a href="http://localhost:8080/register"
    th:text="#{welcome.register}"/>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 </body>
 <form action="/logout" method="post">
-  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+  <input
+          type="hidden"
+          th:name="${_csrf.parameterName}"
+          th:value="${_csrf.token}" />
   <input type="submit" value="Sign Out"/>
 </form>
 </html>
