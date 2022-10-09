@@ -14,7 +14,8 @@
   th:text="#{welcome.login}"/>
 <a href="http://localhost:8080/register"
    th:text="#{welcome.register}"/>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<h1 th:inline="text" th:if="${#httpServletRequest.remoteUser == null}">Hello Guest!</h1>
+<h1 th:inline="text" th:unless="${#httpServletRequest.remoteUser == null}">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 </body>
 <form action="/logout" method="post">
   <input
