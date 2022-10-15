@@ -18,7 +18,7 @@ public class UserController {
     @GetMapping("/user")
     public User getUser(@Valid @RequestParam(value = "name", defaultValue = "Vadik Krasava") String name,
                         @Valid @RequestParam(value = "mobile", defaultValue = "88005553555") String mobile){
-        User user = new User();
+        var user = new User();
         user.setUserName(name);
         user.setMobileNumber(mobile);
         userService.save(user);
@@ -26,10 +26,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public UserDTO registerUser(@Valid UserDTO user){
-        //TODO:
+    public String registerUser(@Valid UserDTO user){
         userService.save(user.getUser());
-        return user;
+        return "redirect:login";
     }
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
