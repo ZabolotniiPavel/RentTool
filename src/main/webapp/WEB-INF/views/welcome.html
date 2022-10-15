@@ -7,9 +7,7 @@
 <body>
 <h1>Welcome to rent tool application</h1>
 <p th:text="${message}"></p>
-<a href="http://localhost:8080/postOffer?lang=ro">Romana</a>
-<a href="http://localhost:8080/postOffer?lang=ru">Русский</a>
-
+<div th:insert="fragments/menus.html :: language"></div>
 <a href="http://localhost:8080/login"
   th:text="#{welcome.login}" th:if="${#httpServletRequest.remoteUser == null}"/>
 <a href="http://localhost:8080/register"
