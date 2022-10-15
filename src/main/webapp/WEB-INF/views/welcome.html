@@ -7,5 +7,19 @@
 <body>
 <h1>Welcome to rent tool application</h1>
 <p th:text="${message}"></p>
+<div th:insert="fragments/menus.html :: language"></div>
+<a href="http://localhost:8080/login"
+  th:text="#{welcome.login}" th:if="${#httpServletRequest.remoteUser == null}"/>
+<a href="http://localhost:8080/register"
+   th:text="#{welcome.register}" th:if="${#httpServletRequest.remoteUser == null}"/>
+<h1 th:inline="text" th:if="${#httpServletRequest.remoteUser == null}">Hello Guest!</h1>
+<h1 th:inline="text" th:unless="${#httpServletRequest.remoteUser == null}">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 </body>
+<form action="/logout" method="post" th:unless="${#httpServletRequest.remoteUser == null}">
+  <input
+          type="hidden"
+          th:name="${_csrf.parameterName}"
+          th:value="${_csrf.token}" />
+  <input type="submit" value="Sign Out"/>
+</form>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Boot Exception Handling example</title>
+</head>
+
+<body>
+<h1>Failed to process your request</h1>
+
+<div>
+  <div>
+    <span><strong>Status</strong></span>
+    <span th:text="${status}"></span>
+  </div>
+  <div>
+    <span><strong>Error</strong></span>
+    <span th:text="${error}"></span>
+  </div>
+  <div>
+    <span><strong>Message</strong></span>
+    <span th:text="${message}"></span>
+  </div>
+  <div th:if="${exception != null}">
+    <span><strong>Exception</strong></span>
+    <span th:text="${exception}"></span>
+  </div>
+  <div th:if="${trace != null}">
+    <span><strong>Stacktrace</strong></span>
+    <span th:text="${trace}"></span>
+  </div>
+
+</div>
+
+</body>
+</html>

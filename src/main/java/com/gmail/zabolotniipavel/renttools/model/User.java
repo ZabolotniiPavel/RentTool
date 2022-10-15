@@ -17,6 +17,8 @@ public class User {
     @NotEmpty
     private String mobileNumber;
 
+    @NotEmpty
+    private String password;
     @OneToMany(mappedBy="user")
     private Set<Post> posts;
 
@@ -37,5 +39,11 @@ public class User {
         this.mobileNumber = mobileNumber;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

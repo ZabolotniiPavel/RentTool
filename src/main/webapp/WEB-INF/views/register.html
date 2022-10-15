@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Registration</title>
+</head>
+<body>
+<p>
+  Please enter new user details
+</p>
+<form th:action="@{/register}" method="post">
+  <div><label> User Name : <input type="text" name="userName"/> </label></div>
+  <div><label> Password: <input type="text" name="password"/> </label></div>
+  <div><label> Mobile Number: <input type="text" name="mobileNumber"/> </label></div>
+  <div><input type="submit" value="Register"/></div>
+</form>
+</body>
+</html>
